@@ -107,8 +107,8 @@ const RSVP = () => {
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="text-center mb-12">
-        <h1 className="font-script text-5xl md:text-6xl text-green-800 mb-4">
+      <div className="text-center mb-12 px-4">
+        <h1 className="font-script text-4xl sm:text-5xl md:text-6xl text-green-800 mb-4">
           RSVP
         </h1>
         <div className="flex justify-center items-center space-x-2 mb-8">
@@ -116,25 +116,25 @@ const RSVP = () => {
           <div className="w-2 h-2 rounded-full bg-purple-300"></div>
           <div className="w-3 h-3 rounded-full bg-purple-400"></div>
         </div>
-        <p className="text-gray-700 text-lg">
+        <p className="text-gray-700 text-base sm:text-lg px-4">
           Please let us know if you'll be joining us on our special day!
         </p>
       </div>
 
       {submitted ? (
-        <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
-          <div className="text-green-600 text-5xl mb-4">✓</div>
-          <h2 className="text-2xl font-semibold text-green-800 mb-2">
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6 sm:p-8 text-center">
+          <div className="text-green-600 text-4xl sm:text-5xl mb-4">✓</div>
+          <h2 className="text-xl sm:text-2xl font-semibold text-green-800 mb-2">
             Thank You!
           </h2>
-          <p className="text-green-700">
+          <p className="text-green-700 text-sm sm:text-base">
             We've received your RSVP and can't wait to celebrate with you!
           </p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-8">
+        <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-6 sm:p-8">
           <div className="mb-6">
-            <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+            <label htmlFor="name" className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">
               Full Name *
             </label>
             <input
@@ -144,12 +144,12 @@ const RSVP = () => {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
             />
           </div>
 
           <div className="mb-6">
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">
               Will you be attending? *
             </label>
             <div className="space-y-2">
@@ -163,7 +163,7 @@ const RSVP = () => {
                   onChange={handleChange}
                   className="mr-2 text-purple-600"
                 />
-                <span className="text-gray-700">Yes, I'll be there!</span>
+                <span className="text-gray-700 text-sm sm:text-base">Yes, I'll be there!</span>
               </label>
               <label className="flex items-center">
                 <input
@@ -175,13 +175,13 @@ const RSVP = () => {
                   onChange={handleChange}
                   className="mr-2 text-purple-600"
                 />
-                <span className="text-gray-700">Sorry, I can't make it</span>
+                <span className="text-gray-700 text-sm sm:text-base">Sorry, I can't make it</span>
               </label>
             </div>
           </div>
 
           <div className="mb-6">
-            <label htmlFor="dietary" className="block text-gray-700 font-medium mb-2">
+            <label htmlFor="dietary" className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">
               Dietary Restrictions or Allergies
             </label>
             <textarea
@@ -190,13 +190,13 @@ const RSVP = () => {
               rows="3"
               value={formData.dietary}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
               placeholder="Please let us know about any dietary restrictions..."
             />
           </div>
 
           <div className="mb-6">
-            <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+            <label htmlFor="message" className="block text-gray-700 font-medium mb-2 text-sm sm:text-base">
               Message (Optional)
             </label>
             <textarea
@@ -205,20 +205,20 @@ const RSVP = () => {
               rows="4"
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
               placeholder="Leave us a message..."
             />
           </div>
 
           {error && (
-            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-xs sm:text-sm">
               {error}
             </div>
           )}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-lg transition-colors"
+            className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-purple-400 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-lg transition-colors text-sm sm:text-base"
           >
             {isSubmitting ? 'Sending...' : 'Submit RSVP'}
           </button>

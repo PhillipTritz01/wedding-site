@@ -1,4 +1,21 @@
+import { useState, useEffect } from 'react'
+import { fetchContent } from '../utils/cms'
+
 const TheWedding = () => {
+  const [content, setContent] = useState(null)
+
+  useEffect(() => {
+    fetchContent().then(data => setContent(data))
+  }, [])
+
+  if (!content) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-gray-600">Loading...</div>
+      </div>
+    )
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12 px-4">
@@ -15,7 +32,7 @@ const TheWedding = () => {
       <div className="max-w-2xl mx-auto px-4">
         <div className="bg-white rounded-lg shadow-md p-6 sm:p-8 mb-12 text-center">
           <p className="text-gray-600 text-base sm:text-lg">
-            No events at the moment
+            {content.theWedding.eventDetails}
           </p>
         </div>
 
@@ -30,9 +47,8 @@ const TheWedding = () => {
             <div className="w-3 h-3 rounded-full bg-purple-400"></div>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6 sm:p-8">
-            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-              Venue details and directions will be provided closer to the date. 
-              We can't wait to celebrate with you!
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base whitespace-pre-line">
+              {content.theWedding.gettingThere}
             </p>
           </div>
         </div>
@@ -43,10 +59,8 @@ const TheWedding = () => {
             ACCOMMODATION
           </h2>
           <div className="bg-white rounded-lg shadow-md p-6 sm:p-8">
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-              I'm a paragraph. Click here to add your own text and edit me. It's easy. 
-              Just click 'Edit Text' or double click me to add your own content and make changes to the font. 
-              Feel free to drag and drop me anywhere you like on your page. I'm a great place for you to tell a story.
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line">
+              {content.theWedding.accommodation}
             </p>
           </div>
         </div>

@@ -1,4 +1,21 @@
+import { useState, useEffect } from 'react'
+import { fetchContent, getFileUrl } from '../utils/cms'
+
 const OurStory = () => {
+  const [content, setContent] = useState(null)
+
+  useEffect(() => {
+    fetchContent().then(data => setContent(data))
+  }, [])
+
+  if (!content) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-gray-600">Loading...</div>
+      </div>
+    )
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-12 px-4">
@@ -13,33 +30,47 @@ const OurStory = () => {
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto mb-12 px-4">
-        {/* Image Placeholder 1 */}
+        {/* Image 1 */}
         <div className="relative">
-          <div className="aspect-square bg-gradient-to-br from-pink-200 to-purple-200 rounded-lg overflow-hidden shadow-lg">
-            <div className="w-full h-full flex items-center justify-center text-gray-500">
-              <span className="text-xs sm:text-sm">Photo Placeholder</span>
+          {content.ourStory.image1 ? (
+            <img 
+              src={getFileUrl(content.ourStory.image1)} 
+              alt="Our Story" 
+              className="aspect-square object-cover rounded-lg shadow-lg"
+            />
+          ) : (
+            <div className="aspect-square bg-gradient-to-br from-pink-200 to-purple-200 rounded-lg overflow-hidden shadow-lg">
+              <div className="w-full h-full flex items-center justify-center text-gray-500">
+                <span className="text-xs sm:text-sm">Photo Placeholder</span>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
-        {/* Image Placeholder 2 */}
+        {/* Image 2 */}
         <div className="relative">
-          <div className="aspect-square bg-gradient-to-br from-blue-200 to-green-200 rounded-lg overflow-hidden shadow-lg">
-            <div className="w-full h-full flex items-center justify-center text-gray-500">
-              <span className="text-xs sm:text-sm">Photo Placeholder</span>
+          {content.ourStory.image2 ? (
+            <img 
+              src={getFileUrl(content.ourStory.image2)} 
+              alt="Our Story" 
+              className="aspect-square object-cover rounded-lg shadow-lg"
+            />
+          ) : (
+            <div className="aspect-square bg-gradient-to-br from-blue-200 to-green-200 rounded-lg overflow-hidden shadow-lg">
+              <div className="w-full h-full flex items-center justify-center text-gray-500">
+                <span className="text-xs sm:text-sm">Photo Placeholder</span>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto text-center px-4">
         <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
-          We met in the most unexpected way, and from that moment on, we knew our lives would never be the same. 
-          Through laughter, adventures, and countless memories, our love has grown stronger each day.
+          {content.ourStory.storyText1}
         </p>
         <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-          Now, we're excited to celebrate this next chapter together with all of you, our family and friends, 
-          as we say "I do" and begin our journey as husband and wife.
+          {content.ourStory.storyText2}
         </p>
       </div>
 

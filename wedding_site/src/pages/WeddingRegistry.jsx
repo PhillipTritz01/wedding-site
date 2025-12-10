@@ -1,10 +1,25 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { fetchContent } from '../utils/cms'
 
 const WeddingRegistry = () => {
-  const registryUrl = "https://www.myregistry.com/wedding-registry/nakia-francis-and-phillip-tritz-lethbridge-ab/4809068"
+  const [content, setContent] = useState(null)
   const [showPassword, setShowPassword] = useState(false)
   const [copied, setCopied] = useState(false)
-  const password = "nakia&phillip4life"
+
+  useEffect(() => {
+    fetchContent().then(data => setContent(data))
+  }, [])
+
+  if (!content) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-gray-600">Loading...</div>
+      </div>
+    )
+  }
+
+  const registryUrl = content.weddingRegistry.registryUrl
+  const password = content.weddingRegistry.password
 
   const handleCopy = async () => {
     try {

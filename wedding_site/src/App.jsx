@@ -6,6 +6,7 @@ import TheWedding from './pages/TheWedding'
 import WeddingParty from './pages/WeddingParty'
 import WeddingRegistry from './pages/WeddingRegistry'
 import RSVP from './pages/RSVP'
+import Admin from './pages/Admin'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/wedding-party" element={<WeddingParty />} />
           <Route path="/wedding-registry" element={<WeddingRegistry />} />
           <Route path="/rsvp" element={<RSVP />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </div>
     </Router>

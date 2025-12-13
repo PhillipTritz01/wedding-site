@@ -41,6 +41,7 @@ const TheWedding = () => {
           <h2 className="font-script text-3xl sm:text-4xl text-green-800 mb-4 text-center">
             Getting There
           </h2>
+
           <div className="flex justify-center items-center space-x-2 mb-6">
             <div className="w-3 h-3 rounded-full bg-purple-400"></div>
             <div className="w-2 h-2 rounded-full bg-purple-300"></div>

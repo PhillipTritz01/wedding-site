@@ -69,12 +69,18 @@ const getDefaultContent = () => ({
     bridesmaids: [
       { name: "Maid of Honor", label: "Maid of Honor", image: "" },
       { name: "Bridesmaid", label: "Bridesmaid", image: "" },
+      { name: "Bridesmaid", label: "Bridesmaid", image: "" },
+      { name: "Bridesmaid", label: "Bridesmaid", image: "" },
+      { name: "Bridesmaid", label: "Bridesmaid", image: "" },
       { name: "Bridesmaid", label: "Bridesmaid", image: "" }
     ],
     groomsmen: [
-      { name: "Groomsman", image: "" },
-      { name: "Groomsman", image: "" },
-      { name: "Groomsman", image: "" }
+      { name: "Groomsman", label: "", image: "" },
+      { name: "Groomsman", label: "", image: "" },
+      { name: "Groomsman", label: "", image: "" },
+      { name: "Groomsman", label: "", image: "" },
+      { name: "Groomsman", label: "", image: "" },
+      { name: "Groomsman", label: "", image: "" }
     ]
   },
   weddingRegistry: {

@@ -694,14 +694,25 @@ const Admin = () => {
                     </div>
                     {content.weddingParty.groomsmen.map((item, index) => (
                       <div key={index} className="border border-gray-200 rounded-lg p-4 mb-4">
-                        <div className="mb-2">
-                          <label className="block text-gray-700 font-medium mb-2 text-sm">Name</label>
-                          <input
-                            type="text"
-                            value={item.name}
-                            onChange={(e) => handleArrayChange('weddingParty', 'groomsmen', index, 'name', e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
-                          />
+                        <div className="grid grid-cols-2 gap-4 mb-2">
+                          <div>
+                            <label className="block text-gray-700 font-medium mb-2 text-sm">Name</label>
+                            <input
+                              type="text"
+                              value={item.name}
+                              onChange={(e) => handleArrayChange('weddingParty', 'groomsmen', index, 'name', e.target.value)}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-gray-700 font-medium mb-2 text-sm">Label</label>
+                            <input
+                              type="text"
+                              value={item.label}
+                              onChange={(e) => handleArrayChange('weddingParty', 'groomsmen', index, 'label', e.target.value)}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                            />
+                          </div>
                         </div>
                         <div className="mb-2">
                           <label className="block text-gray-700 font-medium mb-2 text-sm">Image</label>

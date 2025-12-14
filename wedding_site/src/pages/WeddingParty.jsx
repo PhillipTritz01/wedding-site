@@ -78,18 +78,28 @@ const WeddingParty = () => {
         {content.weddingParty.groomsmen.map((groomsman, index) => (
           <div key={index} className="relative">
             {groomsman.image ? (
-              <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
+              <div className="aspect-square rounded-lg overflow-hidden shadow-lg relative">
                 <img 
                   src={getFileUrl(groomsman.image)} 
                   alt={groomsman.name}
                   className="w-full h-full object-cover"
                 />
+                {groomsman.label && (
+                  <div className="absolute top-2 right-2 bg-purple-600 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-medium">
+                    {groomsman.label}
+                  </div>
+                )}
               </div>
             ) : (
-              <div className="aspect-square bg-gradient-to-br from-blue-200 via-green-200 to-purple-200 rounded-lg overflow-hidden shadow-lg">
+              <div className="aspect-square bg-gradient-to-br from-blue-200 via-green-200 to-purple-200 rounded-lg overflow-hidden shadow-lg relative">
                 <div className="w-full h-full flex items-center justify-center text-gray-500">
                   <span className="text-xs sm:text-sm">Photo Placeholder</span>
                 </div>
+                {groomsman.label && (
+                  <div className="absolute top-2 right-2 bg-purple-600 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-medium">
+                    {groomsman.label}
+                  </div>
+                )}
               </div>
             )}
             <p className="text-center mt-4 text-gray-700 font-medium text-sm sm:text-base">{groomsman.name}</p>

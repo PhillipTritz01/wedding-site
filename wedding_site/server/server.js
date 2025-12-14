@@ -111,9 +111,9 @@ async function initializeContent() {
           { name: "Bridesmaid", label: "Bridesmaid", image: "" }
         ],
         groomsmen: [
-          { name: "Groomsman", image: "" },
-          { name: "Groomsman", image: "" },
-          { name: "Groomsman", image: "" }
+          { name: "Groomsman", label: "", image: "" },
+          { name: "Groomsman", label: "", image: "" },
+          { name: "Groomsman", label: "", image: "" }
         ]
       },
       weddingRegistry: {

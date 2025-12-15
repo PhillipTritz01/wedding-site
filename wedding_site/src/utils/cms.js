@@ -1,5 +1,5 @@
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
-const BASE_URL = API_URL.replace('/api', '');
+const UPLOADS_BASE = import.meta.env.VITE_UPLOADS_BASE || API_URL.replace(/\/api\/?$/, '');
 
 let contentCache = null;
 let contentPromise = null;
@@ -7,14 +7,22 @@ let contentPromise = null;
 // Helper function to get file URL (handles both URLs and file paths)
 export const getFileUrl = (filePath) => {
   if (!filePath) return null;
+
+  // already absolute
   if (filePath.startsWith('http://') || filePath.startsWith('https://')) {
-    return filePath; // Legacy URL support
+    return filePath;
   }
-  // Ensure filePath starts with / if it doesn't already
-  const normalizedPath = filePath.startsWith('/') ? filePath : `/${filePath}`;
-  // Ensure BASE_URL doesn't end with / to avoid double slashes
-  const base = BASE_URL.endsWith('/') ? BASE_URL.slice(0, -1) : BASE_URL;
-  return `${base}${normalizedPath}`;
+
+  // normalize any bad saved values
+  let p = filePath;
+
+  // fix values like "api/uploads/..." or "/api/uploads/..."
+  p = p.replace(/^\/?api\/uploads/, '/uploads');
+
+  // ensure leading slash
+  if (!p.startsWith('/')) p = '/' + p;
+
+  return `${UPLOADS_BASE}${p}`;
 };
 
 export const fetchContent = async () => {

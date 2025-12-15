@@ -75,5 +75,20 @@ npm run build
 
 The built files will be in the `dist` directory.
 
+### Environment Variables for Production
+
+When deploying to production (e.g., Vercel), you must set these environment variables:
+
+- **VITE_API_URL**: Your API base URL (e.g., `https://api.tritzwedding.com/api`)
+- **VITE_UPLOADS_BASE**: Base URL for uploaded files (e.g., `https://api.tritzwedding.com`)
+
+**Example for Vercel:**
+```
+VITE_API_URL=https://api.tritzwedding.com/api
+VITE_UPLOADS_BASE=https://api.tritzwedding.com
+```
+
+**Important:** After setting environment variables, you must redeploy for the changes to take effect.
+
 For more details about the CMS, see `CMS_README.md`.
 

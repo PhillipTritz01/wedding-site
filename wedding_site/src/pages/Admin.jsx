@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const UPLOADS_BASE = import.meta.env.VITE_UPLOADS_BASE || API_URL.replace(/\/api\/?$/, '');
 
 const Admin = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -217,14 +218,22 @@ const Admin = () => {
 
   const getFileUrl = (filePath) => {
     if (!filePath) return null;
+
+    // already absolute
     if (filePath.startsWith('http://') || filePath.startsWith('https://')) {
-      return filePath; // Legacy URL support
+      return filePath;
     }
-    // Ensure filePath starts with / if it doesn't already
-    const normalizedPath = filePath.startsWith('/') ? filePath : `/${filePath}`;
-    // Get base URL and ensure it doesn't end with /
-    const baseUrl = API_URL.replace('/api', '').replace(/\/$/, '');
-    return `${baseUrl}${normalizedPath}`;
+
+    // normalize any bad saved values
+    let p = filePath;
+
+    // fix values like "api/uploads/..." or "/api/uploads/..."
+    p = p.replace(/^\/?api\/uploads/, '/uploads');
+
+    // ensure leading slash
+    if (!p.startsWith('/')) p = '/' + p;
+
+    return `${UPLOADS_BASE}${p}`;
   };
 
   if (!isAuthenticated) {

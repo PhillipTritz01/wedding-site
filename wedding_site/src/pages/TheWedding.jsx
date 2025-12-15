@@ -26,9 +26,9 @@ const TheWedding = () => {
 
       <div className="max-w-2xl mx-auto px-4">
         <div className="bg-white rounded-lg shadow-md p-6 sm:p-8 mb-12 text-center">
-          <p className="text-gray-600 text-base sm:text-lg">
+          <div className="text-gray-600 text-base sm:text-lg whitespace-pre-line">
             {content.theWedding.eventDetails}
-          </p>
+          </div>
         </div>
 
         {/* Getting There Section */}
@@ -37,9 +37,9 @@ const TheWedding = () => {
             Getting There
           </h2>
           <div className="bg-white rounded-lg shadow-md p-6 sm:p-8">
-            <p className="text-gray-700 leading-relaxed text-sm sm:text-base whitespace-pre-line">
+            <div className="text-gray-700 leading-relaxed text-sm sm:text-base whitespace-pre-line">
               {content.theWedding.gettingThere}
-            </p>
+            </div>
           </div>
         </div>
 
@@ -49,9 +49,9 @@ const TheWedding = () => {
             ACCOMMODATION
           </h2>
           <div className="bg-white rounded-lg shadow-md p-6 sm:p-8">
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line">
+            <div className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line">
               {content.theWedding.accommodation}
-            </p>
+            </div>
           </div>
         </div>
       </div>

@@ -61,12 +61,12 @@ const OurStory = () => {
       </div>
 
       <div className="max-w-3xl mx-auto text-center px-4">
-        <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
+        <div className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 whitespace-pre-line">
           {content.ourStory.storyText1}
-        </p>
-        <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+        </div>
+        <div className="text-gray-700 text-base sm:text-lg leading-relaxed whitespace-pre-line">
           {content.ourStory.storyText2}
-        </p>
+        </div>
       </div>
     </div>
   )

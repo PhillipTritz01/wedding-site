@@ -220,8 +220,11 @@ const Admin = () => {
     if (filePath.startsWith('http://') || filePath.startsWith('https://')) {
       return filePath; // Legacy URL support
     }
-    const baseUrl = API_URL.replace('/api', '');
-    return `${baseUrl}${filePath}`;
+    // Ensure filePath starts with / if it doesn't already
+    const normalizedPath = filePath.startsWith('/') ? filePath : `/${filePath}`;
+    // Get base URL and ensure it doesn't end with /
+    const baseUrl = API_URL.replace('/api', '').replace(/\/$/, '');
+    return `${baseUrl}${normalizedPath}`;
   };
 
   if (!isAuthenticated) {

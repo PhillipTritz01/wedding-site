@@ -10,7 +10,11 @@ export const getFileUrl = (filePath) => {
   if (filePath.startsWith('http://') || filePath.startsWith('https://')) {
     return filePath; // Legacy URL support
   }
-  return `${BASE_URL}${filePath}`;
+  // Ensure filePath starts with / if it doesn't already
+  const normalizedPath = filePath.startsWith('/') ? filePath : `/${filePath}`;
+  // Ensure BASE_URL doesn't end with / to avoid double slashes
+  const base = BASE_URL.endsWith('/') ? BASE_URL.slice(0, -1) : BASE_URL;
+  return `${base}${normalizedPath}`;
 };
 
 export const fetchContent = async () => {

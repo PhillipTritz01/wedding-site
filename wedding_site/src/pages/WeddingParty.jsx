@@ -22,11 +22,6 @@ const WeddingParty = () => {
         <h1 className="font-script text-4xl sm:text-5xl md:text-6xl text-green-800 mb-4">
           Bridesmaids
         </h1>
-        <div className="flex justify-center items-center space-x-2 mb-8">
-          <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-          <div className="w-2 h-2 rounded-full bg-purple-300"></div>
-          <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-        </div>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto mb-12 px-4">
@@ -67,11 +62,6 @@ const WeddingParty = () => {
         <h1 className="font-script text-4xl sm:text-5xl md:text-6xl text-green-800 mb-4">
           Groomsmen
         </h1>
-        <div className="flex justify-center items-center space-x-2 mb-8">
-          <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-          <div className="w-2 h-2 rounded-full bg-purple-300"></div>
-          <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-        </div>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto px-4">

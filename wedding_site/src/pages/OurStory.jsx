@@ -22,11 +22,6 @@ const OurStory = () => {
         <h1 className="font-script text-4xl sm:text-5xl md:text-6xl text-green-800 mb-4">
           Our Story
         </h1>
-        <div className="flex justify-center items-center space-x-2 mb-8">
-          <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-          <div className="w-2 h-2 rounded-full bg-purple-300"></div>
-          <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-        </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto mb-12 px-4">
@@ -73,13 +68,6 @@ const OurStory = () => {
           {content.ourStory.storyText2}
         </p>
       </div>
-
-      {/* Navigation Arrow - Hidden on mobile */}
-      <button className="hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full p-3 text-white transition-all">
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
     </div>
   )
 }

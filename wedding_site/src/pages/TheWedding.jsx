@@ -22,11 +22,6 @@ const TheWedding = () => {
         <h1 className="font-script text-4xl sm:text-5xl md:text-6xl text-green-800 mb-4">
           Big Day
         </h1>
-        <div className="flex justify-center items-center space-x-2 mb-8">
-          <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-          <div className="w-2 h-2 rounded-full bg-purple-300"></div>
-          <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-        </div>
       </div>
 
       <div className="max-w-2xl mx-auto px-4">
@@ -38,15 +33,9 @@ const TheWedding = () => {
 
         {/* Getting There Section */}
         <div className="mb-12">
-          <h2 className="font-script text-3xl sm:text-4xl text-green-800 mb-4 text-center">
+          <h2 className="font-script text-3xl sm:text-4xl text-green-800 mb-6 text-center">
             Getting There
           </h2>
-
-          <div className="flex justify-center items-center space-x-2 mb-6">
-            <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-            <div className="w-2 h-2 rounded-full bg-purple-300"></div>
-            <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-          </div>
           <div className="bg-white rounded-lg shadow-md p-6 sm:p-8">
             <p className="text-gray-700 leading-relaxed text-sm sm:text-base whitespace-pre-line">
               {content.theWedding.gettingThere}

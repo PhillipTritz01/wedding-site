@@ -111,12 +111,7 @@ const RSVP = () => {
         <h1 className="font-script text-4xl sm:text-5xl md:text-6xl text-green-800 mb-4">
           RSVP
         </h1>
-        <div className="flex justify-center items-center space-x-2 mb-8">
-          <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-          <div className="w-2 h-2 rounded-full bg-purple-300"></div>
-          <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-        </div>
-        <p className="text-gray-700 text-base sm:text-lg px-4">
+        <p className="text-gray-700 text-base sm:text-lg px-4 mb-8">
           Please let us know if you'll be joining us on our special day!
         </p>
       </div>

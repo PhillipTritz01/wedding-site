@@ -60,12 +60,14 @@ const OurStory = () => {
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto text-center px-4">
-        <div className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6 whitespace-pre-line">
-          {content.ourStory.storyText1}
-        </div>
-        <div className="text-gray-700 text-base sm:text-lg leading-relaxed whitespace-pre-line">
-          {content.ourStory.storyText2}
+      <div className="max-w-3xl mx-auto px-4">
+        <div className="bg-white rounded-lg shadow-md p-6 sm:p-8">
+          <div className="text-gray-700 text-base sm:text-lg leading-relaxed whitespace-pre-line text-center mb-3">
+            {content.ourStory.storyText1}
+          </div>
+          <div className="text-gray-700 text-base sm:text-lg leading-relaxed whitespace-pre-line text-center">
+            {content.ourStory.storyText2}
+          </div>
         </div>
       </div>
     </div>

@@ -30,7 +30,7 @@ function App() {
   // Public site: render public routes, /admin only on localhost
   return (
     <Router>
-      <div className="min-h-screen bg-blue-50">
+      <div className="min-h-screen bg-white">
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />

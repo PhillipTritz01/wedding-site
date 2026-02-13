@@ -45,8 +45,8 @@ const TheWedding = () => {
 
         {/* Accommodation Section */}
         <div>
-          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 text-center">
-            ACCOMMODATION
+          <h2 className="font-script text-3xl sm:text-4xl text-green-800 mb-6 text-center">
+            Accommodation
           </h2>
           <div className="bg-white rounded-lg shadow-md p-6 sm:p-8">
             <div className="text-gray-600 leading-relaxed text-sm sm:text-base whitespace-pre-line">

@@ -75,7 +75,17 @@ const getDefaultContent = () => ({
   theWedding: {
     eventDetails: "No events at the moment",
     gettingThere: "Venue details and directions will be provided closer to the date. We can't wait to celebrate with you!",
-    accommodation: "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I'm a great place for you to tell a story."
+    accommodation: "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I'm a great place for you to tell a story.",
+    calendar: [
+      { date: "Aug 10", day: "Monday", text: "" },
+      { date: "Aug 11", day: "Tuesday", text: "" },
+      { date: "Aug 12", day: "Wednesday", text: "" },
+      { date: "Aug 13", day: "Thursday", text: "" },
+      { date: "Aug 14", day: "Friday", text: "" },
+      { date: "Aug 15", day: "Saturday", text: "" },
+      { date: "Aug 16", day: "Sunday", text: "" },
+      { date: "Aug 17", day: "Monday", text: "" }
+    ]
   },
   weddingParty: {
     bridesmaids: [

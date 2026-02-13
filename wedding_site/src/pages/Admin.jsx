@@ -599,6 +599,26 @@ const Admin = () => {
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                     />
                   </div>
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-4">Week Of Schedule (August 10-17, 2026)</label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                      {content.theWedding.calendar && content.theWedding.calendar.map((day, index) => (
+                        <div key={index} className="border border-gray-200 rounded-lg p-4 sm:p-6">
+                          <div className="mb-3 sm:mb-4">
+                            <div className="font-semibold text-gray-800 text-sm sm:text-base">{day.date}</div>
+                            <div className="text-xs sm:text-sm text-gray-600">{day.day}</div>
+                          </div>
+                          <textarea
+                            value={day.text}
+                            onChange={(e) => handleArrayChange('theWedding', 'calendar', index, 'text', e.target.value)}
+                            rows="6"
+                            placeholder="Enter event details..."
+                            className="w-full px-2 sm:px-3 py-2 border border-gray-300 rounded text-xs sm:text-sm focus:ring-2 focus:ring-purple-500"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                   <button
                     onClick={() => handleSave('theWedding')}
                     disabled={loading}

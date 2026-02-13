@@ -37,6 +37,13 @@ export const fetchContent = async () => {
   contentPromise = fetch(`${API_URL}/content`)
     .then(res => res.json())
     .then(data => {
+      // Ensure calendar exists in theWedding section (backward compatibility)
+      if (!data.theWedding) {
+        data.theWedding = {};
+      }
+      if (!data.theWedding.calendar) {
+        data.theWedding.calendar = getDefaultContent().theWedding.calendar;
+      }
       contentCache = data;
       return data;
     })

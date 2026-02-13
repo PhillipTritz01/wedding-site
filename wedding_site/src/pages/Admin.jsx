@@ -22,10 +22,28 @@ const Admin = () => {
     }
   }, []);
 
+  const getDefaultCalendar = () => [
+    { date: "Aug 10", day: "Monday", text: "" },
+    { date: "Aug 11", day: "Tuesday", text: "" },
+    { date: "Aug 12", day: "Wednesday", text: "" },
+    { date: "Aug 13", day: "Thursday", text: "" },
+    { date: "Aug 14", day: "Friday", text: "" },
+    { date: "Aug 15", day: "Saturday", text: "" },
+    { date: "Aug 16", day: "Sunday", text: "" },
+    { date: "Aug 17", day: "Monday", text: "" }
+  ];
+
   const fetchContent = async () => {
     try {
       const response = await fetch(`${API_URL}/content`);
       const data = await response.json();
+      // Ensure calendar exists in theWedding section (backward compatibility)
+      if (!data.theWedding) {
+        data.theWedding = {};
+      }
+      if (!data.theWedding.calendar) {
+        data.theWedding.calendar = getDefaultCalendar();
+      }
       setContent(data);
     } catch (error) {
       console.error('Failed to fetch content:', error);

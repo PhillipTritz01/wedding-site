@@ -140,7 +140,26 @@ await initializeContent();
 // Helper function to read content
 async function readContent() {
   const data = await fs.readFile(CONTENT_FILE, 'utf-8');
-  return JSON.parse(data);
+  const content = JSON.parse(data);
+  
+  // Ensure calendar exists in theWedding section (backward compatibility)
+  if (!content.theWedding) {
+    content.theWedding = {};
+  }
+  if (!content.theWedding.calendar) {
+    content.theWedding.calendar = [
+      { date: "Aug 10", day: "Monday", text: "" },
+      { date: "Aug 11", day: "Tuesday", text: "" },
+      { date: "Aug 12", day: "Wednesday", text: "" },
+      { date: "Aug 13", day: "Thursday", text: "" },
+      { date: "Aug 14", day: "Friday", text: "" },
+      { date: "Aug 15", day: "Saturday", text: "" },
+      { date: "Aug 16", day: "Sunday", text: "" },
+      { date: "Aug 17", day: "Monday", text: "" }
+    ];
+  }
+  
+  return content;
 }
 
 // Helper function to write content

@@ -41,12 +41,19 @@ const Admin = () => {
       if (!data.theWedding) {
         data.theWedding = {};
       }
-      if (!data.theWedding.calendar) {
+      if (!data.theWedding.calendar || !Array.isArray(data.theWedding.calendar) || data.theWedding.calendar.length === 0) {
         data.theWedding.calendar = getDefaultCalendar();
       }
       setContent(data);
     } catch (error) {
       console.error('Failed to fetch content:', error);
+      // Set default content with calendar if fetch fails
+      const defaultData = {
+        theWedding: {
+          calendar: getDefaultCalendar()
+        }
+      };
+      setContent(defaultData);
     }
   };
 
@@ -620,14 +627,14 @@ const Admin = () => {
                   <div>
                     <label className="block text-gray-700 font-medium mb-4">Week Of Schedule (August 10-17, 2026)</label>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-                      {content.theWedding.calendar && content.theWedding.calendar.map((day, index) => (
+                      {(content.theWedding?.calendar || getDefaultCalendar()).map((day, index) => (
                         <div key={index} className="border border-gray-200 rounded-lg p-4 sm:p-6">
                           <div className="mb-3 sm:mb-4">
                             <div className="font-semibold text-gray-800 text-sm sm:text-base">{day.date}</div>
                             <div className="text-xs sm:text-sm text-gray-600">{day.day}</div>
                           </div>
                           <textarea
-                            value={day.text}
+                            value={day.text || ''}
                             onChange={(e) => handleArrayChange('theWedding', 'calendar', index, 'text', e.target.value)}
                             rows="6"
                             placeholder="Enter event details..."

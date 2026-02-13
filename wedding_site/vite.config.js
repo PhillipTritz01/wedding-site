@@ -3,8 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    port: 3000
+  preview: {
+    host: true,
+    port: 3000,
+    allowedHosts: ['admin.tritzwedding.com', '.tritzwedding.com']
   }
 })
-

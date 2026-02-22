@@ -41,6 +41,9 @@ export const fetchContent = async () => {
       if (!data.theWedding) {
         data.theWedding = {};
       }
+      if (data.theWedding.weekOfScheduleIntro === undefined) {
+        data.theWedding.weekOfScheduleIntro = "";
+      }
       if (!data.theWedding.calendar) {
         data.theWedding.calendar = getDefaultContent().theWedding.calendar;
       }
@@ -83,6 +86,7 @@ const getDefaultContent = () => ({
     eventDetails: "No events at the moment",
     gettingThere: "Venue details and directions will be provided closer to the date. We can't wait to celebrate with you!",
     accommodation: "I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I'm a great place for you to tell a story.",
+    weekOfScheduleIntro: "",
     calendar: [
       { date: "Aug 10", day: "Monday", text: "" },
       { date: "Aug 11", day: "Tuesday", text: "" },

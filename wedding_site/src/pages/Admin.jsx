@@ -625,7 +625,18 @@ const Admin = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-700 font-medium mb-4">Week Of Schedule (August 10-17, 2026)</label>
+                    <label className="block text-gray-700 font-medium mb-2">Week Of Schedule - Intro Text</label>
+                    <p className="text-gray-500 text-sm mb-2">Text shown above the calendar (optional)</p>
+                    <textarea
+                      value={content.theWedding?.weekOfScheduleIntro || ''}
+                      onChange={(e) => handleChange('theWedding', 'weekOfScheduleIntro', e.target.value)}
+                      rows="3"
+                      placeholder="Add introductory text for the week schedule..."
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 mb-4"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-4">Week Of Schedule - Calendar (August 10-17, 2026)</label>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
                       {(content.theWedding?.calendar || getDefaultCalendar()).map((day, index) => (
                         <div key={index} className="border border-gray-200 rounded-lg p-4 sm:p-6">

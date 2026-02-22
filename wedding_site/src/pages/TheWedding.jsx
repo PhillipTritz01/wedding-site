@@ -61,6 +61,11 @@ const TheWedding = () => {
         <h2 className="font-script text-3xl sm:text-4xl text-green-800 mb-4 sm:mb-6 text-center">
           Week Of Schedule
         </h2>
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6">
+          <div className="text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line text-center">
+            {content.theWedding.weekOfScheduleIntro || ''}
+          </div>
+        </div>
         <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 lg:p-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {content.theWedding.calendar && content.theWedding.calendar.map((day, index) => (

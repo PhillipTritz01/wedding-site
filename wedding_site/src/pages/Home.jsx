@@ -79,10 +79,10 @@ const Home = () => {
         
         {/* Content Overlay */}
         <div className="relative z-10 text-center text-white px-4 sm:px-6">
-          <h1 className="font-script text-4xl sm:text-5xl md:text-7xl mb-4">
+          <h1 className="font-palatino text-4xl sm:text-5xl md:text-7xl mb-4">
             {content.home.coupleName}
           </h1>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
+          <h2 className="font-candle-script text-3xl sm:text-4xl md:text-6xl mb-6">
             {content.home.weddingTitle}
           </h2>
           <p className="text-base sm:text-lg md:text-xl mb-8 px-2">

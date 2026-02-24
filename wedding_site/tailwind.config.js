@@ -8,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         'script': ['Dancing Script', 'cursive'],
+        'palatino': ['"Palatino Linotype"', 'Palatino', 'Georgia', 'serif'],
+        'candle-script': ['Candlescript', 'cursive'],
       },
     },
   },

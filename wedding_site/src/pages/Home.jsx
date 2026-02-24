@@ -82,7 +82,7 @@ const Home = () => {
           <h1 className="font-palatino text-2xl sm:text-3xl md:text-4xl mb-4">
             {content.home.coupleName}
           </h1>
-          <h2 className="font-candle-script text-7xl sm:text-8xl md:text-[9rem] mb-6">
+          <h2 className="font-candle-script text-5xl sm:text-5xl md:text-7xl mb-6">
             {content.home.weddingTitle}
           </h2>
           <p className="text-base sm:text-lg md:text-xl mb-8 px-2">
